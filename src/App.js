@@ -14,15 +14,16 @@ function App() {
         🚀 <strong>Quy trình Check-in</strong>
       </p>
 
-      <div className="checkin-boxes">
-        <div className="checkin-box red">
-          🚗 <strong>Di chuyển:</strong> Hướng dẫn đường đến ký túc xá và khu vực đậu xe.
+      {/* 🎯 Layout 3 block liền nhau */}
+      <div className="block-container">
+        <div className="block block-1">
+          🚗 <strong>Di chuyển</strong> <br /> Hướng dẫn đường đến ký túc xá và khu vực đậu xe.
         </div>
-        <div className="checkin-box green">
-          📜 <strong>Thủ tục:</strong> Danh sách giấy tờ và vật dụng cần chuẩn bị.
+        <div className="block block-2">
+          📜 <strong>Thủ tục</strong> <br /> Danh sách giấy tờ và vật dụng cần chuẩn bị.
         </div>
-        <div className="checkin-box blue">
-          🔑 <strong>Nhận phòng:</strong> Điểm danh, nhận chìa khóa, kiểm tra phòng.
+        <div className="block block-3">
+          🔑 <strong>Nhận phòng</strong> <br /> Điểm danh, nhận chìa khóa, kiểm tra phòng.
         </div>
       </div>
 
