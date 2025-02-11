@@ -13,7 +13,7 @@ body {
   position: relative;
 }
 
-/* 🌟 Overlay trắng nhẹ */
+/* 🌟 Overlay làm mờ nền */
 body::before {
   content: "";
   position: absolute;
@@ -21,20 +21,21 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, rgba(255, 255, 255, 0) 70%);
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
   z-index: 0;
 }
 
 /* 📌 Box chính */
 .container {
   text-align: center;
-  max-width: 900px;
-  background: rgba(255, 255, 255, 0.85);
-  padding: 20px;
+  max-width: 850px;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 18px;
   border-radius: 15px;
   position: relative;
   z-index: 1;
-  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* 📌 Logo */
@@ -48,7 +49,7 @@ body::before {
   width: 60px;
   height: 60px;
   border-radius: 10px;
-  transition: transform 0.6s;
+  transition: transform 0.4s ease-in-out;
 }
 
 .logo:hover {
@@ -57,11 +58,11 @@ body::before {
 
 /* 📌 Tiêu đề */
 h1 {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
-  color: #333;
+  color: #222;
   text-transform: uppercase;
-  margin: 10px 0;
+  margin: 8px 0;
 }
 
 h2 {
@@ -72,7 +73,7 @@ h2 {
 
 /* 🚀 Quy trình Check-in */
 .process-title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   color: #ff6600;
   margin: 15px 0;
@@ -81,35 +82,39 @@ h2 {
   align-items: center;
 }
 
-.process-title img {
-  width: 25px;
-  margin-right: 10px;
-}
-
 /* 📌 Layout 3 khối */
 .block-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   margin-top: 20px;
 }
 
 /* 📌 Khối */
 .block {
   flex: 1;
-  padding: 15px;
+  padding: 14px;
   border-radius: 12px;
   color: white;
   font-weight: 600;
   text-align: center;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease-in-out;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
   font-size: 16px;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* 🔹 Tăng độ tương phản chữ */
 }
 
 .block:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 📌 Hiệu ứng click trên mobile */
+.block:active {
+  transform: scale(0.98);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
 }
 
 /* 📌 Màu từng khối */
@@ -127,7 +132,7 @@ h2 {
 
 /* 📌 Mũi tên */
 .arrow {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   color: #555;
   margin: 0 10px;
@@ -136,13 +141,19 @@ h2 {
 /* 📌 Responsive */
 @media (max-width: 768px) {
   .container {
-    width: 95%;
-    padding: 15px;
+    width: 90%;
+    padding: 12px;
   }
 
   .block-container {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+  }
+
+  .block {
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 8px;
   }
 
   .arrow {
