@@ -1,104 +1,131 @@
-/* 🌟 Thiết lập Background */
+/* 🌟 Background với bóng trắng gradient */
 body {
   background: url("../public/bg2.jpg") no-repeat center center fixed;
   background-size: cover;
   font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* 🎭 Overlay trắng gradient nhẹ */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, rgba(255, 255, 255, 0) 70%);
+  z-index: 0;
 }
 
 /* 📌 Container chính */
 .container {
   text-align: center;
   max-width: 900px;
-  margin: auto;
   background: rgba(255, 255, 255, 0.85);
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  margin-top: 50px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.15); /* Viền bóng nhẹ */
 }
 
 /* 📌 Logo */
-.logo-container {
-  text-align: center;
+.logo {
+  width: 60px;
+  height: 60px;
   margin-bottom: 10px;
 }
 
-.logo {
-  width: 80px;
-  height: auto;
-  border-radius: 10px;
-}
-
-/* 📌 Tiêu đề chính */
-.title {
+/* 📌 Tiêu đề */
+h1 {
   font-size: 28px;
   font-weight: bold;
-  color: #ff6600;
+  color: #333;
+  text-transform: uppercase;
   margin: 10px 0;
 }
 
-.highlight {
-  color: #2ecc71;
-}
-
 /* 📌 Tiêu đề phụ */
-.subtitle {
+h2 {
   font-size: 20px;
-  color: #007bff;
-  margin-bottom: 20px;
-}
-
-/* 📌 Tiêu đề Section */
-.section-title {
-  font-size: 22px;
-  color: #ff6600;
   font-weight: bold;
-  margin-bottom: 15px;
+  color: #007bff;
 }
 
-/* 🌈 Các khối thông tin */
-.checkin-steps {
+/* 🚀 Quy trình Check-in */
+.process-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff6600;
+  margin: 15px 0;
   display: flex;
-  justify-content: space-around;
-  gap: 15px;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.step {
+.process-title img {
+  width: 25px;
+  margin-right: 10px;
+}
+
+/* 📌 Các Box Check-in */
+.checkin-boxes {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* 📌 Mỗi Box */
+.checkin-box {
   flex: 1;
-  min-width: 200px;
   padding: 15px;
-  color: #fff;
+  border-radius: 10px;
+  color: white;
   font-size: 16px;
   font-weight: bold;
-  border-radius: 10px;
-  text-align: left;
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Viền bóng nhẹ */
+  transition: transform 0.3s ease-in-out;
 }
 
-/* 🔴 Step Đỏ */
-.step-red {
-  background: linear-gradient(to right, #ff4b2b, #ff416c);
+.checkin-box:hover {
+  transform: scale(1.05);
 }
 
-/* 🟢 Step Xanh Lá */
-.step-green {
-  background: linear-gradient(to right, #56ab2f, #a8e063);
+/* 📌 Màu từng box */
+.checkin-box.red {
+  background: #ff4d4d;
 }
 
-/* 🔵 Step Xanh Dương */
-.step-blue {
-  background: linear-gradient(to right, #3498db, #6dd5fa);
+.checkin-box.green {
+  background: #4caf50;
+}
+
+.checkin-box.blue {
+  background: #3498db;
 }
 
 /* 📌 Footer */
 .footer {
-  font-size: 14px;
   margin-top: 20px;
-  color: #555;
+  font-size: 14px;
+  color: #666;
+}
+
+/* 📌 Responsive */
+@media (max-width: 768px) {
+  .checkin-boxes {
+    flex-direction: column;
+  }
 }
