@@ -7,9 +7,11 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-direction: column; /* 🔹 Fix lỗi không căn giữa trên mobile */
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  text-align: center;
   position: relative;
 }
 
@@ -28,7 +30,10 @@ body::before {
 
 /* 📌 Box chính */
 .container {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* 🔹 Đảm bảo nội dung luôn ở giữa */
   max-width: 850px;
   background: rgba(255, 255, 255, 0.92);
   padding: 20px;
@@ -37,6 +42,7 @@ body::before {
   z-index: 1;
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
   font-family: "Be Vietnam Pro", sans-serif !important;
+  width: 90%;
 }
 
 /* 📌 Logo */
@@ -102,6 +108,7 @@ p {
   align-items: center;
   gap: 12px;
   margin-top: 20px;
+  width: 100%;
 }
 
 /* 📌 Khối */
@@ -168,18 +175,20 @@ p {
 /* 📌 Responsive */
 @media (max-width: 768px) {
   .container {
-    width: 90%;
-    padding: 12px;
+    width: 95%;
+    padding: 15px;
   }
 
   .block-container {
     flex-direction: column;
+    align-items: center;
     gap: 12px;
   }
 
   .block {
+    width: 90%; /* 🔹 Đảm bảo block không bị nhỏ hoặc lệch */
     font-size: 14px;
-    padding: 10px;
+    padding: 12px;
     border-radius: 8px;
   }
 
