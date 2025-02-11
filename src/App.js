@@ -4,7 +4,9 @@ import "./App.css";
 function App() {
   return (
     <div className="container">
-      <img src="/dmblogo.jpg" alt="DMB Logo" className="logo" />
+      <div className="logo-container">
+        <img src="/dmblogo.jpg" alt="DMB Logo" className="logo" />
+      </div>
       <h1>DMB CHECKIN [NGÀY / THÁNG / NĂM]</h1>
       <h2>Tại VGU</h2>
 
