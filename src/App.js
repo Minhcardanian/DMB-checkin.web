@@ -1,41 +1,42 @@
 import React from "react";
 import "./App.css";
-import logo from "./logo.svg"; // Nếu muốn thay logo DMB, thay đổi đường dẫn
 
-const App = () => {
+function App() {
   return (
     <div className="container">
-      {/* Header */}
-      <header className="header">
-        <img src={logo} alt="DMB Logo" className="logo" />
-        <h1>
-          DMB Checkin <span>[Ngày / Tháng / Năm]</span>
-        </h1>
-        <h2>Tại VGU</h2>
-      </header>
+      {/* Logo */}
+      <div className="logo-container">
+        <img src={`${process.env.PUBLIC_URL}/dmblogo.jpg`} alt="DMB Logo" className="logo" />
+      </div>
 
-      {/* Hướng dẫn Check-in */}
-      <section className="guide">
-        <h3>Quy trình Check-in</h3>
-        <ul>
-          <li>
-            <strong>Di chuyển:</strong> Hướng dẫn đường đến ký túc xá và khu vực đậu xe.
-          </li>
-          <li>
-            <strong>Thủ tục:</strong> Danh sách giấy tờ và vật dụng cần chuẩn bị.
-          </li>
-          <li>
-            <strong>Nhận phòng:</strong> Điểm danh, nhận chìa khóa, kiểm tra phòng.
-          </li>
-        </ul>
-      </section>
+      {/* Title */}
+      <h1 className="title">
+        DMB Checkin <span className="highlight">[Ngày / Tháng / Năm]</span>
+      </h1>
+      <h2 className="subtitle">Tại VGU</h2>
+
+      {/* Section Title */}
+      <h3 className="section-title">🚀 Quy trình Check-in</h3>
+
+      {/* Check-in Steps */}
+      <div className="checkin-steps">
+        <div className="step step-red">
+          🚗 <strong>Di chuyển:</strong> Hướng dẫn đường đến ký túc xá và khu vực đậu xe.
+        </div>
+        <div className="step step-green">
+          📜 <strong>Thủ tục:</strong> Danh sách giấy tờ và vật dụng cần chuẩn bị.
+        </div>
+        <div className="step step-blue">
+          🔑 <strong>Nhận phòng:</strong> Điểm danh, nhận chìa khóa, kiểm tra phòng.
+        </div>
+      </div>
 
       {/* Footer */}
       <footer className="footer">
-        <p>&copy; {new Date().getFullYear()} Dormitory Management Board - VGU</p>
+        © {new Date().getFullYear()} Dormitory Management Board - VGU
       </footer>
     </div>
   );
-};
+}
 
 export default App;
