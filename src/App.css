@@ -90,7 +90,8 @@ h2 {
 .block-container {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  align-items: center;
+  gap: 10px;
   margin-top: 20px;
 }
 
@@ -104,6 +105,7 @@ h2 {
   text-align: center;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease-in-out;
+  font-size: 16px;
 }
 
 .block:hover {
@@ -123,6 +125,14 @@ h2 {
   background: #3498db;
 }
 
+/* 📌 Mũi tên */
+.arrow {
+  font-size: 24px;
+  font-weight: bold;
+  color: #555;
+  margin: 0 10px;
+}
+
 /* 📌 Responsive */
 @media (max-width: 768px) {
   .container {
@@ -133,5 +143,9 @@ h2 {
   .block-container {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .arrow {
+    display: none; /* Ẩn mũi tên trên mobile */
   }
 }
