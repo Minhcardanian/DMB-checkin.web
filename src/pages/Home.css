@@ -20,13 +20,13 @@
   h2 {
     font-size: 20px;
     font-weight: 600;
-    color: #007bff;
+    color: #ff6600;
   }
   
   .process-title {
     font-size: 20px;
     font-weight: 600;
-    color: #ff6600;
+    color:  #007bff;
     margin-top: 10px;
     margin-bottom: 20px;
   }
@@ -52,7 +52,10 @@
     font-size: 16px;
     cursor: pointer;
     text-decoration: none;
-    display: block;
+    display: flex;
+    min-height: 120px;
+    justify-content: center;
+    flex-direction: column; 
   }
   
   .block:hover {
@@ -64,9 +67,21 @@
   .block-2 { background: #4caf50; }
   .block-3 { background: #3498db; }
   
+  /*Responsive*/
   @media (max-width: 768px) {
     .block-container {
       flex-direction: column;
     }
+    .block{
+      display: flex;
+      min-height: 60px;
+      justify-content: center;
+      flex-direction: column;
+
+    }
+    .arrow::before{
+      content: "↓"; 
+    }
+
   }
   

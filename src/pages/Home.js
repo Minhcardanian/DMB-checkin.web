@@ -7,7 +7,7 @@ function Home() {
   return (
     <div className="home-container">
       <h1>DMB CHECKIN [NGÀY / THÁNG / NĂM]</h1>
-      <h2>Tại VGU</h2>
+      <h2>Tại Vietnamese-German University</h2>
 
       <Countdown /> {/* Countdown Timer Here */}
 
@@ -17,17 +17,17 @@ function Home() {
 
       <div className="block-container">
         <Link to="/di-chuyen" className="block block-1">
-          <strong>Di chuyển</strong> <br />
-          Hướng dẫn đường đến ký túc xá và khu vực đậu xe.
+          <strong>Di Chuyển</strong> <br />
+          Chỉ dẫn đường đến ký túc xá và khu vực đỗ xe.
         </Link>
         <div className="arrow">→</div>
         <Link to="/thu-tuc" className="block block-2">
-          <strong>Thủ tục</strong> <br />
+          <strong>Thủ Tục</strong> <br />
           Danh sách giấy tờ và vật dụng cần chuẩn bị.
         </Link>
         <div className="arrow">→</div>
         <Link to="/nhan-phong" className="block block-3">
-          <strong>Nhận phòng</strong> <br />
+          <strong>Nhận Phòng</strong> <br />
           Điểm danh, nhận chìa khóa, kiểm tra phòng.
         </Link>
       </div>
