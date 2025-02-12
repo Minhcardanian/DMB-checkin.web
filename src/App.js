@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
@@ -7,18 +7,35 @@ import ThuTuc from "./pages/ThuTuc";
 import NhanPhong from "./pages/NhanPhong";
 import About from "./pages/About";
 import Header from "./components/Header";
+import Loading from "./components/Loading"; // Import Loading Component
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setFadeOut(true);
+      setTimeout(() => setLoading(false), 500); // Smooth fade transition (0.5s)
+    }, 1000); // **1-second loading time**
+  }, []);
+
   return (
     <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/di-chuyen" element={<DiChuyen />} />
-        <Route path="/thu-tuc" element={<ThuTuc />} />
-        <Route path="/nhan-phong" element={<NhanPhong />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
+      {loading ? (
+        <Loading fadeOut={fadeOut} />
+      ) : (
+        <div className={`app-container ${fadeOut ? "fade-in" : ""}`}>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/di-chuyen" element={<DiChuyen />} />
+            <Route path="/thu-tuc" element={<ThuTuc />} />
+            <Route path="/nhan-phong" element={<NhanPhong />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </div>
+      )}
     </>
   );
 }
