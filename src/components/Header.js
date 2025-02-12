@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
 function Header() {
+  const [isHidden, setIsHidden] = useState(false);
+
+  const handleLogoClick = () => {
+    setIsHidden((prev) => !prev);
+  };
+
   return (
-    <header className="header">
+    <header className={`header ${isHidden ? "hidden" : ""}`}>
       <div className="header-content">
-        <Link to="/" className="logo">
+        <Link to="/" className="logo" onClick={handleLogoClick}>
           <img src="/dmblogo.jpg" alt="DMB Logo" />
         </Link>
         <nav className="nav-links">
