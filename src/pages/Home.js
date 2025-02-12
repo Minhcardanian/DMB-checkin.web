@@ -20,12 +20,10 @@ function Home() {
           <strong>Di Chuyển</strong> <br />
           Chỉ dẫn đường đến ký túc xá và khu vực đỗ xe.
         </Link>
-        <div className="arrow">→</div>
         <Link to="/thu-tuc" className="block block-2">
           <strong>Thủ Tục</strong> <br />
           Danh sách giấy tờ và vật dụng cần chuẩn bị.
         </Link>
-        <div className="arrow">→</div>
         <Link to="/nhan-phong" className="block block-3">
           <strong>Nhận Phòng</strong> <br />
           Điểm danh, nhận chìa khóa, kiểm tra phòng.

@@ -133,7 +133,6 @@ body::before {
 }
 
 /* 🚀 Custom Arrow */
-
 .arrow {
   font-size: 24px;
   font-weight: bold;
@@ -142,10 +141,10 @@ body::before {
   text-align: center;
   vertical-align: middle;
   margin: 0 12px;
-} 
+}
 
 .arrow::before {
-  content: "→"; /* This ensures a clean arrow */
+  content: "→";
   font-size: 24px;
   color: #007bff;
   background: none;
@@ -249,21 +248,4 @@ p {
 .block:hover {
   transform: scale(1.03);
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
-}
-
-.app-container {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.app-container.fade-in {
-  opacity: 1;
-}
-.app-container {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.app-container.fade-in {
-  opacity: 1;
 }
