@@ -8,6 +8,7 @@ import NhanPhong from "./pages/NhanPhong";
 import About from "./pages/About";
 import Header from "./components/Header";
 import Loading from "./components/Loading"; // Import Loading Component
+import Countdown from "./components/Countdown"; // Import Countdown Component
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -16,8 +17,8 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setFadeOut(true);
-      setTimeout(() => setLoading(false), 500); // Smooth fade transition (0.5s)
-    }, 1000); // **1-second loading time**
+      setTimeout(() => setLoading(false), 500); // 0.5s fade transition
+    }, 1000); // 1s loading time
   }, []);
 
   return (
@@ -27,6 +28,7 @@ function App() {
       ) : (
         <div className={`app-container ${fadeOut ? "fade-in" : ""}`}>
           <Header />
+          <Countdown /> {/* Positioned above the main content */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/di-chuyen" element={<DiChuyen />} />

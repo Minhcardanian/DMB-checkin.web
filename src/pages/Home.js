@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
+import Countdown from "../components/Countdown";
 
 function Home() {
   return (
@@ -8,8 +9,10 @@ function Home() {
       <h1>DMB CHECKIN [NGÀY / THÁNG / NĂM]</h1>
       <h2>Tại VGU</h2>
 
+      <Countdown /> {/* Countdown Timer Here */}
+
       <p className="process-title">
-        <strong>Quy trình Check-in</strong>
+        🚀 <strong>Quy trình Check-in</strong>
       </p>
 
       <div className="block-container">
@@ -17,12 +20,12 @@ function Home() {
           <strong>Di chuyển</strong> <br />
           Hướng dẫn đường đến ký túc xá và khu vực đậu xe.
         </Link>
-        <span className="arrow"></span>
+        <div className="arrow">→</div>
         <Link to="/thu-tuc" className="block block-2">
           <strong>Thủ tục</strong> <br />
           Danh sách giấy tờ và vật dụng cần chuẩn bị.
         </Link>
-        <span className="arrow"></span>
+        <div className="arrow">→</div>
         <Link to="/nhan-phong" className="block block-3">
           <strong>Nhận phòng</strong> <br />
           Điểm danh, nhận chìa khóa, kiểm tra phòng.
