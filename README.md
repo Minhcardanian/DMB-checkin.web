@@ -29,11 +29,23 @@ dmb-checkin/
 ├── node_modules/
 ├── public/
 ├── src/
-│   ├── components/   # Các component React
-│   ├── pages/        # Trang chính của website
-│   ├── assets/       # Ảnh, icon
-│   ├── App.js        # Cấu hình ứng dụng
-│   ├── index.js      # Điểm vào chính
+│   ├── components/       # Các component React
+│   │   ├── Header.js     # Header của trang
+│   │   ├── Footer.js     # Footer của trang
+│   │   ├── Navigation.js # Điều hướng menu
+│   ├── pages/            # Trang chính của website
+│   │   ├── Home.js       # Trang chủ
+│   │   ├── About.js      # Trang giới thiệu
+│   │   ├── DiChuyen.js   # Trang hướng dẫn di chuyển
+│   │   ├── ThuTuc.js     # Trang hướng dẫn thủ tục
+│   │   ├── NhanPhong.js  # Trang nhận phòng
+│   ├── assets/           # Ảnh, icon
+│   ├── styles/           # CSS cho từng component
+│   │   ├── App.css       # Style chính
+│   │   ├── Header.css    # Style cho Header
+│   │   ├── Footer.css    # Style cho Footer
+│   ├── App.js            # Cấu hình ứng dụng
+│   ├── index.js          # Điểm vào chính
 ├── .gitignore
 ├── README.md
 ├── package.json
