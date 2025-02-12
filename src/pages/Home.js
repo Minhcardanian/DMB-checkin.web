@@ -9,22 +9,22 @@ function Home() {
       <h2>Tại VGU</h2>
 
       <p className="process-title">
-        🚀 <strong>Quy trình Check-in</strong>
+        <strong>Quy trình Check-in</strong>
       </p>
 
       <div className="block-container">
         <Link to="/di-chuyen" className="block block-1">
-          1️⃣ 🚗 <strong>Di chuyển</strong> <br />
+          <strong>Di chuyển</strong> <br />
           Hướng dẫn đường đến ký túc xá và khu vực đậu xe.
         </Link>
-        <div className="arrow">➡️</div>
+        <span className="arrow"></span>
         <Link to="/thu-tuc" className="block block-2">
-          2️⃣ 📜 <strong>Thủ tục</strong> <br />
+          <strong>Thủ tục</strong> <br />
           Danh sách giấy tờ và vật dụng cần chuẩn bị.
         </Link>
-        <div className="arrow">➡️</div>
+        <span className="arrow"></span>
         <Link to="/nhan-phong" className="block block-3">
-          3️⃣ 🔑 <strong>Nhận phòng</strong> <br />
+          <strong>Nhận phòng</strong> <br />
           Điểm danh, nhận chìa khóa, kiểm tra phòng.
         </Link>
       </div>
