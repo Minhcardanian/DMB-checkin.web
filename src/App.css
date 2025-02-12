@@ -3,7 +3,7 @@
 body {
   background: url("../public/bg2.jpg") no-repeat center center fixed;
   background-size: cover;
-  font-family: "Be Vietnam Pro", sans-serif !important; /* 🔹 Đảm bảo toàn bộ trang dùng đúng font */
+  font-family: "Be Vietnam Pro", sans-serif !important;
   margin: 0;
   padding: 0;
   display: flex;
@@ -18,54 +18,97 @@ body {
 /* 🌟 Overlay làm mờ nền */
 body::before {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(6px);
-  z-index: 0;
+  z-index: -1; /* 🔹 Đưa overlay về background để không chặn tương tác */
 }
 
-/* 📌 Box chính */
+/* 💌 Header Transparent */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  padding: 8px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 💌 Header Content */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1000px;
+}
+
+/* 💌 Logo - Căn về góc trái */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo img:hover {
+  transform: rotateY(180deg);
+}
+
+/* 💌 Nav Links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+/* 💌 Box chính */
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; /* 🔹 Đảm bảo nội dung luôn ở giữa */
+  align-items: center;
   max-width: 850px;
   background: rgba(255, 255, 255, 0.92);
   padding: 20px;
   border-radius: 15px;
   position: relative;
-  z-index: 1;
+  z-index: 2; /* 🔹 Đảm bảo container nằm trên overlay */
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
   font-family: "Be Vietnam Pro", sans-serif !important;
   width: 90%;
+  margin-top: 90px;
 }
 
-/* 📌 Logo */
-.logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo {
-  width: 60px;
-  height: 60px;
-  border-radius: 10px;
-  transition: transform 0.4s ease-in-out;
-}
-
-.logo:hover {
-  transform: rotateY(180deg);
-}
-
-/* 📌 Tiêu đề */
+/* 💌 Tiêu đề */
 h1, h2, p {
-  font-family: "Be Vietnam Pro", sans-serif !important; /* 🔹 Đảm bảo font đồng bộ */
+  font-family: "Be Vietnam Pro", sans-serif !important;
 }
 
 h1 {
@@ -82,7 +125,7 @@ h2 {
   color: #007bff;
 }
 
-/* 📌 Font chữ cho nội dung */
+/* 💌 Font chữ cho nội dung */
 p {
   font-size: 18px;
   font-weight: 400;
@@ -95,14 +138,14 @@ p {
   font-size: 20px;
   font-weight: 600;
   color: #ff6600;
-  margin-top: 10px;  /* 🔹 Thêm khoảng cách giữa tiêu đề và nội dung */
+  margin-top: 10px;
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* 📌 Layout 3 khối */
+/* 💌 Layout 3 khối */
 .block-container {
   display: flex;
   justify-content: center;
@@ -112,7 +155,7 @@ p {
   width: 100%;
 }
 
-/* 📌 Khối */
+/* 💌 Khối */
 .block {
   flex: 1;
   padding: 14px;
@@ -127,7 +170,8 @@ p {
   text-decoration: none;
   display: block;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  margin-bottom: 8px; /* 🔹 Giảm khoảng cách giữa các block */
+  margin-bottom: 8px;
+  z-index: 3;
 }
 
 .block:hover {
@@ -135,13 +179,6 @@ p {
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* 📌 Hiệu ứng click trên mobile */
-.block:active {
-  transform: scale(0.98);
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
-}
-
-/* 📌 Màu từng khối */
 .block-1 {
   background: #ff4d4d;
 }
@@ -154,37 +191,17 @@ p {
   background: #3498db;
 }
 
-/* 📌 Nút quay lại */
-.back-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 15px;
-  font-size: 16px;
-  font-weight: 600;
-  font-family: "Be Vietnam Pro", sans-serif !important;
-  color: white;
-  background: #555;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-}
-
-.back-button:hover {
-  background: #333;
-  transform: scale(1.05);
-}
-
-/* 📌 Footer */
-.footer {
-  margin-top: 20px;
-  padding-bottom: 15px; /* 🔹 Thêm padding để không bị sát mép dưới */
-}
-
-/* 📌 Responsive */
+/* 💌 Responsive */
 @media (max-width: 768px) {
+  .header-content {
+    flex-direction: row;
+    align-items: center;
+  }
+
   .container {
     width: 95%;
     padding: 15px;
+    margin-top: 100px;
   }
 
   .block-container {
@@ -194,13 +211,9 @@ p {
   }
 
   .block {
-    width: 90%; /* 🔹 Đảm bảo block không bị nhỏ hoặc lệch */
+    width: 90%;
     font-size: 14px;
     padding: 12px;
     border-radius: 8px;
-  }
-
-  .arrow {
-    display: none;
   }
 }

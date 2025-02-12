@@ -1,14 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../App.css";
+import "./Home.css";
 
 function Home() {
   return (
-    <div className="container">
-      <div className="logo-container">
-        <img src="/dmblogo.jpg" alt="DMB Logo" className="logo" />
-      </div>
-
+    <div className="home-container">
       <h1>DMB CHECKIN [NGÀY / THÁNG / NĂM]</h1>
       <h2>Tại VGU</h2>
 
