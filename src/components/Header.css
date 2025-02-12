@@ -13,60 +13,36 @@
     z-index: 10;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
-  }
-  
-  /* 🔹 Khi header thu gọn */
-  .header.collapsed {
-    padding: 5px 10px;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .header.collapsed .nav-links {
+}
+
+/* 🔹 Khi header thu gọn */
+.header.collapsed {
+    padding: 8px 20px;
+    transform: translateY(-100%);
+}
+
+.header.collapsed .nav-links {
     display: none;
-  }
-  
-  /* 💌 Header Content */
-  .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    max-width: 1000px;
-  }
-  
-  /* 💌 Logo - Căn về góc trái */
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo img {
-    width: 50px;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
+}
+
+/* 💡 Toggle Button */
+.toggle-button {
+    background: none;
+    border: none;
     cursor: pointer;
-  }
-  
-  .logo img:hover {
-    transform: rotateY(180deg);
-  }
-  
-  /* 💌 Nav Links */
-  .nav-links {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links a {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 20px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
     color: #222;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .nav-links a:hover {
+}
+
+.toggle-button:hover {
     color: #007bff;
-  }
-  
+}
+
+@media (min-width: 769px) {
+    .toggle-button {
+        display: none;
+    }
+}

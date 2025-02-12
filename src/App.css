@@ -28,33 +28,31 @@ body::before {
   z-index: -1;
 }
 
-/* 💌 Header Transparent */
+/* 🌟 Header Transparent */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(8px);
-  padding: 8px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+    padding: 8px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
 }
 
-/* 🔹 Khi header thu gọn trên mobile */
-@media (max-width: 768px) {
-  .header.collapsed {
-    padding: 5px 10px;
-    transition: all 0.3s ease-in-out;
-  }
+/* 🔹 Khi header thu gọn */
+.header.collapsed {
+    padding: 8px 20px;
+    transform: translateY(-100%);
+}
 
-  .header.collapsed .nav-links {
+.header.collapsed .nav-links {
     display: none;
-  }
 }
 
 /* 💌 Header Content */
@@ -109,6 +107,29 @@ body::before {
     display: flex;
     gap: 15px;
   }
+}
+
+/* 💡 Toggle Button */
+.toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+    color: #222;
+}
+
+.toggle-button:hover {
+    color: #007bff;
+}
+
+@media (min-width: 769px) {
+    .toggle-button {
+        display: none;
+    }
 }
 
 /* 💌 Box chính */
