@@ -133,15 +133,6 @@ body::before {
 }
 
 /* 🚀 Custom Arrow */
-.arrow {
-  font-size: 24px;
-  font-weight: bold;
-  color: #007bff;
-  display: inline-block;
-  text-align: center;
-  vertical-align: middle;
-  margin: 0 12px;
-}
 
 .arrow {
   font-size: 24px;
@@ -151,7 +142,7 @@ body::before {
   text-align: center;
   vertical-align: middle;
   margin: 0 12px;
-}
+} 
 
 .arrow::before {
   content: "→"; /* This ensures a clean arrow */
