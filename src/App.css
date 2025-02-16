@@ -30,29 +30,29 @@ body::before {
 
 /* 🌟 Header Transparent */
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(8px);
-    padding: 8px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  padding: 8px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 
 /* 🔹 Khi header thu gọn */
 .header.collapsed {
-    padding: 8px 20px;
-    transform: translateY(-100%);
+  padding: 8px 20px;
+  transform: translateY(-100%);
 }
 
 .header.collapsed .nav-links {
-    display: none;
+  display: none;
 }
 
 /* 💌 Header Content */
@@ -111,25 +111,25 @@ body::before {
 
 /* 💡 Toggle Button */
 .toggle-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 10px;
-    color: #000;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10px;
+  color: #000;
 }
 
 .toggle-button:hover {
-    color: #000;
+  color: #000;
 }
 
 @media (min-width: 769px) {
-    .toggle-button {
-        display: none;
-    }
+  .toggle-button {
+    display: none;
+  }
 }
 
 /* 🚀 Custom Arrow */
@@ -172,7 +172,9 @@ body::before {
 }
 
 /* 💌 Tiêu đề */
-h1, h2, p {
+h1,
+h2,
+p {
   font-family: "Be Vietnam Pro", sans-serif !important;
 }
 
@@ -249,3 +251,26 @@ p {
   transform: scale(1.03);
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
 }
+
+/* ========================================================================= */
+/* 🆕 OPTIONAL ENHANCEMENTS for color-coding each block step:
+   Usage:
+     <div className="block block-travel">Travel Content</div>
+     <div className="block block-procedure">Procedure Content</div>
+     <div className="block block-checkin">Check-in Content</div>
+   Adjust colors as needed to fit your brand.                              */
+/* ========================================================================= */
+
+.block-travel {
+  background-color: #f57c00; /* Orange */
+}
+
+.block-procedure {
+  background-color: #43a047; /* Green */
+}
+
+.block-checkin {
+  background-color: #1e88e5; /* Blue */
+}
+
+/* 📝 Feel free to tweak the above classes or remove them if not in use. */
